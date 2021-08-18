@@ -1,0 +1,22 @@
+{% extends 'thokoza/main.html' %} 
+{% load static %} 
+{% block content %}
+{% comment %} <div class="container box-element">
+    <img class="thumbnail_v" src="{% static 'images/akazki.png' %}" alt="">
+        <h3>placeholder</h3>
+    </div> {% endcomment %}
+<div class="row">
+    {% for product in products  %}
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{  product.image.url }}" alt="">
+        <div class="box-element product">
+            <h6><strong>{{ product.name }}</strong></h6>
+            <hr>
+            <button data-product={{ product.id }} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add To Cart</button>
+            <a class="btn btn-outline-success" href="#">View</a>
+            <h4 style="display: inline-block; float: right;">R{{ product.price|floatformat:2 }}</h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

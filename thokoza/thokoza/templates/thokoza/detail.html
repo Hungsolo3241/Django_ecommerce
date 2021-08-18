@@ -1,0 +1,15 @@
+{% extends 'thokoza/main.html' %} 
+{% load static %} 
+{% block content %}
+
+<div class="row"
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{  product.image.url }}" alt="">
+        <div class="box-element product">
+            <h6><strong>{{ product.name }}</strong></h6>
+            <hr>
+            <button data-product={{ product.id }} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add To Cart</button>
+            <h4 style="display: inline-block; float: right;">R{{ product.price|floatformat:2 }}</h4>
+        </div>
+    </div>
+{% endblock %}
